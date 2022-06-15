@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct node {
    char name[50];
@@ -11,13 +12,12 @@ struct node *head = NULL;
 void insertData(char *name, int age) {
    struct node *link = (struct node*) malloc(sizeof(struct node));
 	
-   link->name[50] = name;
+   strcpy(link->name, name);
    link->age = age;
 	
    link->next = head;
 	
    head = link;
-   //printf("%s", name);
 }
 
 void printList() {
